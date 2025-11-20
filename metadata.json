@@ -1,0 +1,5 @@
+{
+  "name": "Vibed Nums",
+  "description": "A two-player sequential strategy game on an irregular grid. Maximise your score by navigating constrained rows and columns.",
+  "requestFramePermissions": []
+}
