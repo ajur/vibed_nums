@@ -5,9 +5,10 @@ import GameLogo from './GameLogo';
 interface MainMenuProps {
   onNewGame: () => void;
   onSettings: () => void;
+  onAbout: () => void;
 }
 
-const MainMenu: React.FC<MainMenuProps> = ({ onNewGame, onSettings }) => {
+const MainMenu: React.FC<MainMenuProps> = ({ onNewGame, onSettings, onAbout }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] w-full max-w-4xl mx-auto p-6 animate-in fade-in zoom-in-95 duration-500">
       
@@ -38,6 +39,13 @@ const MainMenu: React.FC<MainMenuProps> = ({ onNewGame, onSettings }) => {
           className="px-8 py-4 rounded-xl bg-slate-800 text-slate-300 font-semibold text-lg border border-slate-700 hover:bg-slate-700 hover:text-white hover:border-slate-600 transition-all duration-200"
         >
           SETTINGS
+        </button>
+
+        <button 
+          onClick={onAbout}
+          className="px-8 py-4 rounded-xl bg-slate-900/50 text-slate-400 font-semibold text-lg border border-slate-800 hover:bg-slate-800 hover:text-slate-200 hover:border-slate-700 transition-all duration-200"
+        >
+          ABOUT
         </button>
       </div>
 

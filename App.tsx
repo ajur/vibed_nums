@@ -7,11 +7,12 @@ import MainMenu from './components/MainMenu';
 import NewGameMenu from './components/NewGameMenu';
 import RulesModal from './components/RulesModal';
 import GameOverModal from './components/GameOverModal';
+import AboutView from './components/AboutView';
 import { PlayerType, BoardDefinition } from './types';
 import { BOARDS } from './data/boards';
 import { AI_NAMES } from './constants';
 
-type View = 'MAIN_MENU' | 'NEW_GAME' | 'GAME' | 'SETTINGS';
+type View = 'MAIN_MENU' | 'NEW_GAME' | 'GAME' | 'SETTINGS' | 'ABOUT';
 
 interface GameSessionProps {
   config: GameConfig;
@@ -136,6 +137,7 @@ const App: React.FC = () => {
         <MainMenu 
             onNewGame={() => setCurrentView('NEW_GAME')} 
             onSettings={() => setCurrentView('SETTINGS')} 
+            onAbout={() => setCurrentView('ABOUT')}
         />
       )}
 
@@ -172,6 +174,10 @@ const App: React.FC = () => {
 
       {currentView === 'SETTINGS' && (
           <SettingsPlaceholder onBack={() => setCurrentView('MAIN_MENU')} />
+      )}
+
+      {currentView === 'ABOUT' && (
+          <AboutView onBack={() => setCurrentView('MAIN_MENU')} />
       )}
 
     </div>
