@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nums</title>
+    <!-- 
+      Using CDN for Tailwind to keep setup simple without PostCSS config. 
+      In a full production app, you might install tailwindcss via npm. 
+    -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom scrollbar for cleaner look in dark mode */
@@ -22,17 +26,22 @@
         background: #64748b; 
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "react": "https://aistudiocdn.com/react@^19.2.0"
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-slate-950 text-slate-100 overflow-hidden">
     <div id="root"></div>
+    <!-- Vite Entry Point -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

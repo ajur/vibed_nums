@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Vibed Nums
 
-# Run and deploy your AI Studio app
+A two-player sequential strategy game played on an irregular grid. Players take turns picking numbers to maximize their score, but every move constrains the opponent's next move to a specific row or column.
 
-This contains everything you need to run your app locally.
+## Game Rules
 
-View your app in AI Studio: https://ai.studio/apps/drive/11an5irnVVetsVTMVjhpTKKSzBqHyQBLt
+1.  **Objective**: Have the highest score when the game ends.
+2.  **Movement**:
+    *   If Player A picks a cell in a **Row**, Player B must pick a cell in that **Column**.
+    *   If Player A picks a cell in a **Column**, Player B must pick a cell in that **Row**.
+    *   You cannot jump over voids (holes in the board).
+3.  **Game Over**: The game ends when a player is constrained to a line with no valid moves.
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+*   React 18
+*   TypeScript
+*   Tailwind CSS
+*   Vite
 
+## Development
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+2.  Run local development server:
+    ```bash
+    npm run dev
+    ```
+
+3.  Build for production:
+    ```bash
+    npm run build
+    ```
+
+## Deployment
+
+This repository is configured to automatically deploy to **GitHub Pages** via GitHub Actions when pushing to the `main` or `master` branch.
